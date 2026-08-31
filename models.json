@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-08-31T18:02:31.052186+00:00",
+  "fetched_at": "2026-08-31T22:17:25.260671+00:00",
   "count": 20,
   "models": [
     {
@@ -205,7 +205,11 @@
       "modalities_badges": [
         "\ud83d\udcdd Text"
       ],
-      "rank": 1
+      "rank": 1,
+      "openrouter_url": "https://openrouter.ai/models/z-ai/glm-5.2-20260616",
+      "three_d_elo": 1343.0,
+      "three_d_win_rate": 56.8,
+      "three_d_rank": 7
     },
     {
       "id": "minimax/minimax-m3:free",
@@ -396,7 +400,11 @@
         "\ud83d\uddbc\ufe0f Image",
         "\ud83c\udfa5 Video"
       ],
-      "rank": 2
+      "rank": 2,
+      "openrouter_url": "https://openrouter.ai/models/minimax/minimax-m3-20260531",
+      "three_d_elo": 1254.0,
+      "three_d_win_rate": 52.4,
+      "three_d_rank": 31
     },
     {
       "id": "thinkingmachines/inkling-small:free",
@@ -490,7 +498,11 @@
         "\ud83d\uddbc\ufe0f Image",
         "\ud83d\udd0a Audio"
       ],
-      "rank": 3
+      "rank": 3,
+      "openrouter_url": "https://openrouter.ai/models/thinkingmachines/inkling-small-20260730",
+      "three_d_elo": null,
+      "three_d_win_rate": null,
+      "three_d_rank": null
     },
     {
       "id": "minimax/minimax-m2.7:free",
@@ -628,7 +640,11 @@
       "modalities_badges": [
         "\ud83d\udcdd Text"
       ],
-      "rank": 4
+      "rank": 4,
+      "openrouter_url": "https://openrouter.ai/models/minimax/minimax-m2.7-20260318",
+      "three_d_elo": 1236.0,
+      "three_d_win_rate": 50.6,
+      "three_d_rank": 37
     },
     {
       "id": "thinkingmachines/inkling:free",
@@ -772,7 +788,11 @@
         "\ud83d\uddbc\ufe0f Image",
         "\ud83d\udd0a Audio"
       ],
-      "rank": 5
+      "rank": 5,
+      "openrouter_url": "https://openrouter.ai/models/thinkingmachines/inkling-20260715",
+      "three_d_elo": 1205.0,
+      "three_d_win_rate": 44.1,
+      "three_d_rank": 46
     },
     {
       "id": "nvidia/nemotron-3-ultra-550b-a55b:free",
@@ -913,7 +933,11 @@
       "modalities_badges": [
         "\ud83d\udcdd Text"
       ],
-      "rank": 6
+      "rank": 6,
+      "openrouter_url": "https://openrouter.ai/models/nvidia/nemotron-3-ultra-550b-a55b-20260604",
+      "three_d_elo": 1176.0,
+      "three_d_win_rate": 41.1,
+      "three_d_rank": 56
     },
     {
       "id": "google/gemma-4-31b-it:free",
@@ -998,7 +1022,11 @@
         "\ud83d\udcdd Text",
         "\ud83c\udfa5 Video"
       ],
-      "rank": 7
+      "rank": 7,
+      "openrouter_url": "https://openrouter.ai/models/google/gemma-4-31b-it-20260402",
+      "three_d_elo": null,
+      "three_d_win_rate": null,
+      "three_d_rank": null
     },
     {
       "id": "google/gemma-4-26b-a4b-it:free",
@@ -1080,7 +1108,11 @@
         "\ud83d\udcdd Text",
         "\ud83c\udfa5 Video"
       ],
-      "rank": 8
+      "rank": 8,
+      "openrouter_url": "https://openrouter.ai/models/google/gemma-4-26b-a4b-it-20260403",
+      "three_d_elo": null,
+      "three_d_win_rate": null,
+      "three_d_rank": null
     },
     {
       "id": "nvidia/nemotron-3-super-120b-a12b:free",
@@ -1166,7 +1198,11 @@
       "modalities_badges": [
         "\ud83d\udcdd Text"
       ],
-      "rank": 9
+      "rank": 9,
+      "openrouter_url": "https://openrouter.ai/models/nvidia/nemotron-3-super-120b-a12b-20230311",
+      "three_d_elo": null,
+      "three_d_win_rate": null,
+      "three_d_rank": null
     },
     {
       "id": "cohere/north-mini-code:free",
@@ -1250,7 +1286,11 @@
       "modalities_badges": [
         "\ud83d\udcdd Text"
       ],
-      "rank": 10
+      "rank": 10,
+      "openrouter_url": "https://openrouter.ai/models/cohere/north-mini-code-20260617",
+      "three_d_elo": null,
+      "three_d_win_rate": null,
+      "three_d_rank": null
     },
     {
       "id": "nvidia/nemotron-3.5-lightning:free",
@@ -1323,7 +1363,11 @@
       "modalities_badges": [
         "\ud83d\udcdd Text"
       ],
-      "rank": 11
+      "rank": 11,
+      "openrouter_url": "https://openrouter.ai/models/nvidia/nemotron-3.5-lightning-20260807",
+      "three_d_elo": null,
+      "three_d_win_rate": null,
+      "three_d_rank": null
     },
     {
       "id": "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free",
@@ -1409,7 +1453,11 @@
         "\ud83d\uddbc\ufe0f Image",
         "\ud83c\udfa5 Video"
       ],
-      "rank": 12
+      "rank": 12,
+      "openrouter_url": "https://openrouter.ai/models/nvidia/nemotron-3-nano-omni-30b-a3b-reasoning-20260428",
+      "three_d_elo": null,
+      "three_d_win_rate": null,
+      "three_d_rank": null
     },
     {
       "id": "dots-studio/dots-3-note-preview:free",
@@ -1478,7 +1526,11 @@
         "\ud83d\udcdd Text",
         "\ud83d\uddbc\ufe0f Image"
       ],
-      "rank": 13
+      "rank": 13,
+      "openrouter_url": "https://openrouter.ai/models/dots-studio/dots-3-note-preview-20260813",
+      "three_d_elo": null,
+      "three_d_win_rate": null,
+      "three_d_rank": null
     },
     {
       "id": "google/lyria-3-clip-preview",
@@ -1545,7 +1597,11 @@
         "\ud83d\udcdd Text",
         "\ud83d\uddbc\ufe0f Image"
       ],
-      "rank": 14
+      "rank": 14,
+      "openrouter_url": "https://openrouter.ai/models/google/lyria-3-clip-preview-20260330",
+      "three_d_elo": null,
+      "three_d_win_rate": null,
+      "three_d_rank": null
     },
     {
       "id": "google/lyria-3-pro-preview",
@@ -1612,7 +1668,11 @@
         "\ud83d\udcdd Text",
         "\ud83d\uddbc\ufe0f Image"
       ],
-      "rank": 15
+      "rank": 15,
+      "openrouter_url": "https://openrouter.ai/models/google/lyria-3-pro-preview-20260330",
+      "three_d_elo": null,
+      "three_d_win_rate": null,
+      "three_d_rank": null
     },
     {
       "id": "inclusionai/ling-3.0-flash-fin:free",
@@ -1685,7 +1745,11 @@
       "modalities_badges": [
         "\ud83d\udcdd Text"
       ],
-      "rank": 16
+      "rank": 16,
+      "openrouter_url": "https://openrouter.ai/models/inclusionai/ling-3.0-flash-fin-20260827",
+      "three_d_elo": null,
+      "three_d_win_rate": null,
+      "three_d_rank": null
     },
     {
       "id": "liquid/lfm-2.5-2.6b:free",
@@ -1766,7 +1830,11 @@
       "modalities_badges": [
         "\ud83d\udcdd Text"
       ],
-      "rank": 17
+      "rank": 17,
+      "openrouter_url": "https://openrouter.ai/models/liquid/lfm-2.5-2.6b-20260811",
+      "three_d_elo": null,
+      "three_d_win_rate": null,
+      "three_d_rank": null
     },
     {
       "id": "nvidia/nemotron-3.5-content-safety:free",
@@ -1839,7 +1907,11 @@
         "\ud83d\udcdd Text",
         "\ud83d\uddbc\ufe0f Image"
       ],
-      "rank": 18
+      "rank": 18,
+      "openrouter_url": "https://openrouter.ai/models/nvidia/nemotron-3.5-content-safety-20260604",
+      "three_d_elo": null,
+      "three_d_win_rate": null,
+      "three_d_rank": null
     },
     {
       "id": "poolside/laguna-s-2.1:free",
@@ -1903,7 +1975,11 @@
       "modalities_badges": [
         "\ud83d\udcdd Text"
       ],
-      "rank": 19
+      "rank": 19,
+      "openrouter_url": "https://openrouter.ai/models/poolside/laguna-s-2.1-20260720",
+      "three_d_elo": null,
+      "three_d_win_rate": null,
+      "three_d_rank": null
     },
     {
       "id": "poolside/laguna-xs-2.1:free",
@@ -1967,7 +2043,11 @@
       "modalities_badges": [
         "\ud83d\udcdd Text"
       ],
-      "rank": 20
+      "rank": 20,
+      "openrouter_url": "https://openrouter.ai/models/poolside/laguna-xs-2.1-20260625",
+      "three_d_elo": null,
+      "three_d_win_rate": null,
+      "three_d_rank": null
     }
   ]
 }
