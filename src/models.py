@@ -94,6 +94,10 @@ class FreeModel(BaseModel):
     is_expired: bool = False
     modalities_badges: list[str] = []
     rank: int = 0
+    openrouter_url: str = ""
+    three_d_elo: float | None = None
+    three_d_win_rate: float | None = None
+    three_d_rank: int | None = None
 
     def model_post_init(self, __context, /) -> None:
         """Compute derived fields after initialization."""
@@ -105,6 +109,18 @@ class FreeModel(BaseModel):
         
         self.is_expired = is_expired(self.expiration_date)
         self.modalities_badges = get_modality_badges(self.architecture.input_modalities)
+        
+        # OpenRouter model page URL
+        self.openrouter_url = f"https://openrouter.ai/models/{self.canonical_slug}"
+        
+        # 3D benchmark from Design Arena
+        if self.benchmarks and self.benchmarks.design_arena:
+            for entry in self.benchmarks.design_arena:
+                if entry.category == "3d":
+                    self.three_d_elo = entry.elo
+                    self.three_d_win_rate = entry.win_rate
+                    self.three_d_rank = entry.rank
+                    break
 
 
 MODALITY_ICONS = {

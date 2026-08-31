@@ -6,7 +6,7 @@ from pathlib import Path
 
 from feedgen.feed import FeedGenerator
 
-from models import FreeModel, humanize_tokens, reasoning_summary
+from .models import FreeModel, humanize_tokens, reasoning_summary
 
 DOCS_DIR = Path(__file__).parent.parent / "docs"
 CHANGES_JSON_PATH = Path(__file__).parent.parent / "docs" / "changes.json"

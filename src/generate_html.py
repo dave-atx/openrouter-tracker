@@ -6,7 +6,7 @@ from pathlib import Path
 
 from jinja2 import Environment, FileSystemLoader, select_autoescape
 
-from models import FreeModel, coding_index_color, humanize_tokens, reasoning_summary
+from .models import FreeModel, coding_index_color, humanize_tokens, reasoning_summary
 
 TEMPLATES_DIR = Path(__file__).parent / "templates"
 DOCS_DIR = Path(__file__).parent.parent / "docs"

@@ -7,7 +7,7 @@ from pathlib import Path
 
 import httpx
 
-from models import FreeModel
+from .models import FreeModel
 
 OPENROUTER_MODELS_URL = "https://openrouter.ai/api/v1/models"
 MODELS_JSON_PATH = Path(__file__).parent.parent / "models.json"
