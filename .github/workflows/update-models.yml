@@ -1,0 +1,69 @@
+name: Update Free Models & Deploy
+
+on:
+  schedule:
+    - cron: '0 6 * * *'  # Daily 6 AM UTC
+  workflow_dispatch:
+  push:
+    paths:
+      - 'src/**'
+      - 'pyproject.toml'
+      - 'uv.lock'
+      - '.python-version'
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  update-and-deploy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v1
+        with:
+          enable-cache: true
+
+      - name: Install dependencies
+        run: uv sync --frozen
+
+      - name: Fetch and generate
+        run: |
+          uv run python src/fetch_models.py
+          uv run python src/generate_html.py
+          uv run python src/generate_atom.py
+
+      - name: Commit models.json (history)
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add models.json
+          if ! git diff --staged --quiet; then
+            git commit -m "Update models.json $(date +%F)"
+            git push
+          else
+            echo "No changes to models.json"
+          fi
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v4
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: docs/
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
