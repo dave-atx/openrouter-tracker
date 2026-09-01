@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-08-31T22:18:46.986641+00:00",
+  "fetched_at": "2026-09-01T06:54:43.952415+00:00",
   "count": 20,
   "models": [
     {
@@ -76,7 +76,7 @@
           {
             "arena": "agents",
             "category": "mobileapps",
-            "elo": 1207.0,
+            "elo": 1208.0,
             "rank": 16,
             "win_rate": 52.1
           },
@@ -97,7 +97,7 @@
           {
             "arena": "models",
             "category": "3d",
-            "elo": 1343.0,
+            "elo": 1342.0,
             "rank": 7,
             "win_rate": 56.8
           },
@@ -118,7 +118,7 @@
           {
             "arena": "models",
             "category": "dataviz",
-            "elo": 1321.0,
+            "elo": 1320.0,
             "rank": 7,
             "win_rate": 54.3
           },
@@ -141,7 +141,7 @@
             "category": "uicomponent",
             "elo": 1323.0,
             "rank": 9,
-            "win_rate": 57.2
+            "win_rate": 57.1
           },
           {
             "arena": "models",
@@ -206,10 +206,14 @@
         "\ud83d\udcdd Text"
       ],
       "rank": 1,
-      "openrouter_url": "https://openrouter.ai/models/z-ai/glm-5.2-20260616",
-      "three_d_elo": 1343.0,
+      "openrouter_url": "https://openrouter.ai/z-ai/glm-5.2:free",
+      "three_d_elo": 1342.0,
       "three_d_win_rate": 56.8,
-      "three_d_rank": 7
+      "three_d_rank": 7,
+      "avg_latency_ms": null,
+      "avg_throughput_tps": null,
+      "error_rate_pct": 0.3783797088709804,
+      "token_volume_24h": null
     },
     {
       "id": "minimax/minimax-m3:free",
@@ -254,21 +258,21 @@
             "category": "agenticgamedev",
             "elo": 1151.0,
             "rank": 19,
-            "win_rate": 43.4
+            "win_rate": 43.3
           },
           {
             "arena": "agents",
             "category": "androidnative",
-            "elo": 1175.0,
+            "elo": 1174.0,
             "rank": 24,
-            "win_rate": 43.7
+            "win_rate": 43.6
           },
           {
             "arena": "agents",
             "category": "fullstack",
-            "elo": 1225.0,
-            "rank": 15,
-            "win_rate": 49.8
+            "elo": 1223.0,
+            "rank": 16,
+            "win_rate": 49.5
           },
           {
             "arena": "agents",
@@ -281,13 +285,13 @@
             "arena": "agents",
             "category": "mobileapps",
             "elo": 1197.0,
-            "rank": 19,
-            "win_rate": 46.5
+            "rank": 20,
+            "win_rate": 46.4
           },
           {
             "arena": "agents",
             "category": "python-pptxslides",
-            "elo": 1241.0,
+            "elo": 1240.0,
             "rank": 10,
             "win_rate": 49.5
           },
@@ -308,9 +312,9 @@
           {
             "arena": "models",
             "category": "asciiart",
-            "elo": 1189.0,
+            "elo": 1188.0,
             "rank": 27,
-            "win_rate": 47.8
+            "win_rate": 47.7
           },
           {
             "arena": "models",
@@ -322,9 +326,9 @@
           {
             "arena": "models",
             "category": "dataviz",
-            "elo": 1254.0,
+            "elo": 1255.0,
             "rank": 29,
-            "win_rate": 51.8
+            "win_rate": 51.9
           },
           {
             "arena": "models",
@@ -336,14 +340,14 @@
           {
             "arena": "models",
             "category": "svg",
-            "elo": 1209.0,
-            "rank": 29,
-            "win_rate": 48.8
+            "elo": 1208.0,
+            "rank": 30,
+            "win_rate": 48.7
           },
           {
             "arena": "models",
             "category": "uicomponent",
-            "elo": 1270.0,
+            "elo": 1271.0,
             "rank": 28,
             "win_rate": 52.1
           },
@@ -401,10 +405,14 @@
         "\ud83c\udfa5 Video"
       ],
       "rank": 2,
-      "openrouter_url": "https://openrouter.ai/models/minimax/minimax-m3-20260531",
+      "openrouter_url": "https://openrouter.ai/minimax/minimax-m3:free",
       "three_d_elo": 1254.0,
       "three_d_win_rate": 52.4,
-      "three_d_rank": 31
+      "three_d_rank": 31,
+      "avg_latency_ms": null,
+      "avg_throughput_tps": null,
+      "error_rate_pct": 0.6540252795591783,
+      "token_volume_24h": null
     },
     {
       "id": "thinkingmachines/inkling-small:free",
@@ -499,10 +507,14 @@
         "\ud83d\udd0a Audio"
       ],
       "rank": 3,
-      "openrouter_url": "https://openrouter.ai/models/thinkingmachines/inkling-small-20260730",
+      "openrouter_url": "https://openrouter.ai/thinkingmachines/inkling-small:free",
       "three_d_elo": null,
       "three_d_win_rate": null,
-      "three_d_rank": null
+      "three_d_rank": null,
+      "avg_latency_ms": null,
+      "avg_throughput_tps": null,
+      "error_rate_pct": 0.0,
+      "token_volume_24h": null
     },
     {
       "id": "minimax/minimax-m2.7:free",
@@ -550,9 +562,9 @@
           {
             "arena": "models",
             "category": "asciiart",
-            "elo": 1166.0,
-            "rank": 38,
-            "win_rate": 47.5
+            "elo": 1167.0,
+            "rank": 36,
+            "win_rate": 47.6
           },
           {
             "arena": "models",
@@ -566,7 +578,7 @@
             "category": "dataviz",
             "elo": 1253.0,
             "rank": 30,
-            "win_rate": 52.8
+            "win_rate": 52.7
           },
           {
             "arena": "models",
@@ -578,7 +590,7 @@
           {
             "arena": "models",
             "category": "svg",
-            "elo": 1177.0,
+            "elo": 1178.0,
             "rank": 42,
             "win_rate": 49.3
           },
@@ -592,9 +604,9 @@
           {
             "arena": "models",
             "category": "website",
-            "elo": 1264.0,
+            "elo": 1265.0,
             "rank": 32,
-            "win_rate": 52.7
+            "win_rate": 52.6
           }
         ]
       },
@@ -641,10 +653,14 @@
         "\ud83d\udcdd Text"
       ],
       "rank": 4,
-      "openrouter_url": "https://openrouter.ai/models/minimax/minimax-m2.7-20260318",
+      "openrouter_url": "https://openrouter.ai/minimax/minimax-m2.7:free",
       "three_d_elo": 1236.0,
       "three_d_win_rate": 50.6,
-      "three_d_rank": 37
+      "three_d_rank": 37,
+      "avg_latency_ms": null,
+      "avg_throughput_tps": null,
+      "error_rate_pct": 0.7737801011402752,
+      "token_volume_24h": null
     },
     {
       "id": "thinkingmachines/inkling:free",
@@ -701,7 +717,7 @@
           {
             "arena": "models",
             "category": "codecategories",
-            "elo": 1220.0,
+            "elo": 1221.0,
             "rank": 44,
             "win_rate": 42.4
           },
@@ -789,10 +805,14 @@
         "\ud83d\udd0a Audio"
       ],
       "rank": 5,
-      "openrouter_url": "https://openrouter.ai/models/thinkingmachines/inkling-20260715",
+      "openrouter_url": "https://openrouter.ai/thinkingmachines/inkling:free",
       "three_d_elo": 1205.0,
       "three_d_win_rate": 44.1,
-      "three_d_rank": 46
+      "three_d_rank": 46,
+      "avg_latency_ms": null,
+      "avg_throughput_tps": null,
+      "error_rate_pct": 33.14711359404096,
+      "token_volume_24h": null
     },
     {
       "id": "nvidia/nemotron-3-ultra-550b-a55b:free",
@@ -833,8 +853,8 @@
           {
             "arena": "models",
             "category": "3d",
-            "elo": 1176.0,
-            "rank": 56,
+            "elo": 1175.0,
+            "rank": 57,
             "win_rate": 41.1
           },
           {
@@ -876,7 +896,7 @@
             "arena": "models",
             "category": "uicomponent",
             "elo": 1164.0,
-            "rank": 68,
+            "rank": 67,
             "win_rate": 37.8
           },
           {
@@ -934,10 +954,14 @@
         "\ud83d\udcdd Text"
       ],
       "rank": 6,
-      "openrouter_url": "https://openrouter.ai/models/nvidia/nemotron-3-ultra-550b-a55b-20260604",
-      "three_d_elo": 1176.0,
+      "openrouter_url": "https://openrouter.ai/nvidia/nemotron-3-ultra-550b-a55b:free",
+      "three_d_elo": 1175.0,
       "three_d_win_rate": 41.1,
-      "three_d_rank": 56
+      "three_d_rank": 57,
+      "avg_latency_ms": null,
+      "avg_throughput_tps": null,
+      "error_rate_pct": 0.0,
+      "token_volume_24h": null
     },
     {
       "id": "google/gemma-4-31b-it:free",
@@ -1023,10 +1047,14 @@
         "\ud83c\udfa5 Video"
       ],
       "rank": 7,
-      "openrouter_url": "https://openrouter.ai/models/google/gemma-4-31b-it-20260402",
+      "openrouter_url": "https://openrouter.ai/google/gemma-4-31b-it:free",
       "three_d_elo": null,
       "three_d_win_rate": null,
-      "three_d_rank": null
+      "three_d_rank": null,
+      "avg_latency_ms": null,
+      "avg_throughput_tps": null,
+      "error_rate_pct": 3.685578327486553,
+      "token_volume_24h": null
     },
     {
       "id": "google/gemma-4-26b-a4b-it:free",
@@ -1109,10 +1137,14 @@
         "\ud83c\udfa5 Video"
       ],
       "rank": 8,
-      "openrouter_url": "https://openrouter.ai/models/google/gemma-4-26b-a4b-it-20260403",
+      "openrouter_url": "https://openrouter.ai/google/gemma-4-26b-a4b-it:free",
       "three_d_elo": null,
       "three_d_win_rate": null,
-      "three_d_rank": null
+      "three_d_rank": null,
+      "avg_latency_ms": null,
+      "avg_throughput_tps": null,
+      "error_rate_pct": 2.4987946686143374,
+      "token_volume_24h": null
     },
     {
       "id": "nvidia/nemotron-3-super-120b-a12b:free",
@@ -1199,10 +1231,14 @@
         "\ud83d\udcdd Text"
       ],
       "rank": 9,
-      "openrouter_url": "https://openrouter.ai/models/nvidia/nemotron-3-super-120b-a12b-20230311",
+      "openrouter_url": "https://openrouter.ai/nvidia/nemotron-3-super-120b-a12b:free",
       "three_d_elo": null,
       "three_d_win_rate": null,
-      "three_d_rank": null
+      "three_d_rank": null,
+      "avg_latency_ms": null,
+      "avg_throughput_tps": null,
+      "error_rate_pct": 0.3236245954692549,
+      "token_volume_24h": null
     },
     {
       "id": "cohere/north-mini-code:free",
@@ -1287,10 +1323,14 @@
         "\ud83d\udcdd Text"
       ],
       "rank": 10,
-      "openrouter_url": "https://openrouter.ai/models/cohere/north-mini-code-20260617",
+      "openrouter_url": "https://openrouter.ai/cohere/north-mini-code:free",
       "three_d_elo": null,
       "three_d_win_rate": null,
-      "three_d_rank": null
+      "three_d_rank": null,
+      "avg_latency_ms": null,
+      "avg_throughput_tps": null,
+      "error_rate_pct": null,
+      "token_volume_24h": null
     },
     {
       "id": "nvidia/nemotron-3.5-lightning:free",
@@ -1364,10 +1404,14 @@
         "\ud83d\udcdd Text"
       ],
       "rank": 11,
-      "openrouter_url": "https://openrouter.ai/models/nvidia/nemotron-3.5-lightning-20260807",
+      "openrouter_url": "https://openrouter.ai/nvidia/nemotron-3.5-lightning:free",
       "three_d_elo": null,
       "three_d_win_rate": null,
-      "three_d_rank": null
+      "three_d_rank": null,
+      "avg_latency_ms": null,
+      "avg_throughput_tps": null,
+      "error_rate_pct": 0.0,
+      "token_volume_24h": null
     },
     {
       "id": "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free",
@@ -1454,10 +1498,14 @@
         "\ud83c\udfa5 Video"
       ],
       "rank": 12,
-      "openrouter_url": "https://openrouter.ai/models/nvidia/nemotron-3-nano-omni-30b-a3b-reasoning-20260428",
+      "openrouter_url": "https://openrouter.ai/nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free",
       "three_d_elo": null,
       "three_d_win_rate": null,
-      "three_d_rank": null
+      "three_d_rank": null,
+      "avg_latency_ms": null,
+      "avg_throughput_tps": null,
+      "error_rate_pct": null,
+      "token_volume_24h": null
     },
     {
       "id": "dots-studio/dots-3-note-preview:free",
@@ -1527,10 +1575,14 @@
         "\ud83d\uddbc\ufe0f Image"
       ],
       "rank": 13,
-      "openrouter_url": "https://openrouter.ai/models/dots-studio/dots-3-note-preview-20260813",
+      "openrouter_url": "https://openrouter.ai/dots-studio/dots-3-note-preview:free",
       "three_d_elo": null,
       "three_d_win_rate": null,
-      "three_d_rank": null
+      "three_d_rank": null,
+      "avg_latency_ms": null,
+      "avg_throughput_tps": null,
+      "error_rate_pct": null,
+      "token_volume_24h": null
     },
     {
       "id": "google/lyria-3-clip-preview",
@@ -1598,10 +1650,14 @@
         "\ud83d\uddbc\ufe0f Image"
       ],
       "rank": 14,
-      "openrouter_url": "https://openrouter.ai/models/google/lyria-3-clip-preview-20260330",
+      "openrouter_url": "https://openrouter.ai/google/lyria-3-clip-preview",
       "three_d_elo": null,
       "three_d_win_rate": null,
-      "three_d_rank": null
+      "three_d_rank": null,
+      "avg_latency_ms": null,
+      "avg_throughput_tps": null,
+      "error_rate_pct": null,
+      "token_volume_24h": null
     },
     {
       "id": "google/lyria-3-pro-preview",
@@ -1669,10 +1725,14 @@
         "\ud83d\uddbc\ufe0f Image"
       ],
       "rank": 15,
-      "openrouter_url": "https://openrouter.ai/models/google/lyria-3-pro-preview-20260330",
+      "openrouter_url": "https://openrouter.ai/google/lyria-3-pro-preview",
       "three_d_elo": null,
       "three_d_win_rate": null,
-      "three_d_rank": null
+      "three_d_rank": null,
+      "avg_latency_ms": null,
+      "avg_throughput_tps": null,
+      "error_rate_pct": null,
+      "token_volume_24h": null
     },
     {
       "id": "inclusionai/ling-3.0-flash-fin:free",
@@ -1746,10 +1806,14 @@
         "\ud83d\udcdd Text"
       ],
       "rank": 16,
-      "openrouter_url": "https://openrouter.ai/models/inclusionai/ling-3.0-flash-fin-20260827",
+      "openrouter_url": "https://openrouter.ai/inclusionai/ling-3.0-flash-fin:free",
       "three_d_elo": null,
       "three_d_win_rate": null,
-      "three_d_rank": null
+      "three_d_rank": null,
+      "avg_latency_ms": null,
+      "avg_throughput_tps": null,
+      "error_rate_pct": null,
+      "token_volume_24h": null
     },
     {
       "id": "liquid/lfm-2.5-2.6b:free",
@@ -1831,10 +1895,14 @@
         "\ud83d\udcdd Text"
       ],
       "rank": 17,
-      "openrouter_url": "https://openrouter.ai/models/liquid/lfm-2.5-2.6b-20260811",
+      "openrouter_url": "https://openrouter.ai/liquid/lfm-2.5-2.6b:free",
       "three_d_elo": null,
       "three_d_win_rate": null,
-      "three_d_rank": null
+      "three_d_rank": null,
+      "avg_latency_ms": null,
+      "avg_throughput_tps": null,
+      "error_rate_pct": null,
+      "token_volume_24h": null
     },
     {
       "id": "nvidia/nemotron-3.5-content-safety:free",
@@ -1908,10 +1976,14 @@
         "\ud83d\uddbc\ufe0f Image"
       ],
       "rank": 18,
-      "openrouter_url": "https://openrouter.ai/models/nvidia/nemotron-3.5-content-safety-20260604",
+      "openrouter_url": "https://openrouter.ai/nvidia/nemotron-3.5-content-safety:free",
       "three_d_elo": null,
       "three_d_win_rate": null,
-      "three_d_rank": null
+      "three_d_rank": null,
+      "avg_latency_ms": null,
+      "avg_throughput_tps": null,
+      "error_rate_pct": null,
+      "token_volume_24h": null
     },
     {
       "id": "poolside/laguna-s-2.1:free",
@@ -1976,10 +2048,14 @@
         "\ud83d\udcdd Text"
       ],
       "rank": 19,
-      "openrouter_url": "https://openrouter.ai/models/poolside/laguna-s-2.1-20260720",
+      "openrouter_url": "https://openrouter.ai/poolside/laguna-s-2.1:free",
       "three_d_elo": null,
       "three_d_win_rate": null,
-      "three_d_rank": null
+      "three_d_rank": null,
+      "avg_latency_ms": null,
+      "avg_throughput_tps": null,
+      "error_rate_pct": 0.0,
+      "token_volume_24h": null
     },
     {
       "id": "poolside/laguna-xs-2.1:free",
@@ -2044,10 +2120,14 @@
         "\ud83d\udcdd Text"
       ],
       "rank": 20,
-      "openrouter_url": "https://openrouter.ai/models/poolside/laguna-xs-2.1-20260625",
+      "openrouter_url": "https://openrouter.ai/poolside/laguna-xs-2.1:free",
       "three_d_elo": null,
       "three_d_win_rate": null,
-      "three_d_rank": null
+      "three_d_rank": null,
+      "avg_latency_ms": null,
+      "avg_throughput_tps": null,
+      "error_rate_pct": 0.0,
+      "token_volume_24h": null
     }
   ]
 }
