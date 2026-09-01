@@ -171,11 +171,21 @@
     th.sorted-asc::after { content: " ▲"; }
     th.sorted-desc::after { content: " ▼"; }
 
-    .td {
-      padding: 0.875rem 1rem;
+    td {
+      padding: 1rem 1.25rem;
       border-bottom: 1px solid var(--border);
       font-size: 0.875rem;
       vertical-align: middle;
+    }
+
+    th:first-child,
+    td:first-child {
+      padding-left: 1.5rem;
+    }
+
+    th:last-child,
+    td:last-child {
+      padding-right: 1.5rem;
     }
 
     .perf-value {
@@ -270,11 +280,14 @@
     }
 
     .model-name .id .copy-btn {
-      padding: 0.125rem;
-      border-radius: 4px;
+      padding: 0.25rem;
+      border-radius: 6px;
       color: var(--muted);
-      opacity: 0.6;
+      opacity: 0.5;
       transition: all 0.15s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
 
     .model-name .id .copy-btn:hover {
@@ -288,8 +301,8 @@
     }
 
     .model-name .id .copy-btn svg {
-      width: 14px;
-      height: 14px;
+      width: 16px;
+      height: 16px;
     }
 
     .model-name .expired-badge {
