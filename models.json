@@ -1,9 +1,5 @@
 {
-<<<<<<< Updated upstream
-  "fetched_at": "2026-09-01T07:09:45.355997+00:00",
-=======
-  "fetched_at": "2026-09-01T07:10:10.770401+00:00",
->>>>>>> Stashed changes
+  "fetched_at": "2026-09-01T11:01:16.571843+00:00",
   "count": 20,
   "models": [
     {
@@ -216,7 +212,7 @@
       "three_d_rank": 7,
       "avg_latency_ms": null,
       "avg_throughput_tps": null,
-      "error_rate_pct": 0.3868542384392697,
+      "error_rate_pct": 0.8996401519521413,
       "token_volume_24h": null
     },
     {
@@ -415,11 +411,7 @@
       "three_d_rank": 31,
       "avg_latency_ms": null,
       "avg_throughput_tps": null,
-<<<<<<< Updated upstream
-      "error_rate_pct": 0.7801059742959779,
-=======
-      "error_rate_pct": 0.6992081624949691,
->>>>>>> Stashed changes
+      "error_rate_pct": 0.4868673104881651,
       "token_volume_24h": null
     },
     {
@@ -521,7 +513,7 @@
       "three_d_rank": null,
       "avg_latency_ms": null,
       "avg_throughput_tps": null,
-      "error_rate_pct": 0.0,
+      "error_rate_pct": 10.18970729924581,
       "token_volume_24h": null
     },
     {
@@ -667,7 +659,7 @@
       "three_d_rank": 37,
       "avg_latency_ms": null,
       "avg_throughput_tps": null,
-      "error_rate_pct": 0.7311631081136483,
+      "error_rate_pct": 2.313944222932406,
       "token_volume_24h": null
     },
     {
@@ -819,7 +811,7 @@
       "three_d_rank": 46,
       "avg_latency_ms": null,
       "avg_throughput_tps": null,
-      "error_rate_pct": 33.33333333333333,
+      "error_rate_pct": 21.197112713247904,
       "token_volume_24h": null
     },
     {
@@ -968,11 +960,7 @@
       "three_d_rank": 57,
       "avg_latency_ms": null,
       "avg_throughput_tps": null,
-<<<<<<< Updated upstream
-      "error_rate_pct": 0.009165902841431262,
-=======
-      "error_rate_pct": 0.009067827348559376,
->>>>>>> Stashed changes
+      "error_rate_pct": 0.014029180695843024,
       "token_volume_24h": null
     },
     {
@@ -1065,7 +1053,7 @@
       "three_d_rank": null,
       "avg_latency_ms": null,
       "avg_throughput_tps": null,
-      "error_rate_pct": 3.4001283688754853,
+      "error_rate_pct": 6.7749126739388,
       "token_volume_24h": null
     },
     {
@@ -1155,11 +1143,7 @@
       "three_d_rank": null,
       "avg_latency_ms": null,
       "avg_throughput_tps": null,
-<<<<<<< Updated upstream
-      "error_rate_pct": 1.1522521622299706,
-=======
-      "error_rate_pct": 2.093394425730267,
->>>>>>> Stashed changes
+      "error_rate_pct": 0.582656363706036,
       "token_volume_24h": null
     },
     {
@@ -1253,7 +1237,7 @@
       "three_d_rank": null,
       "avg_latency_ms": null,
       "avg_throughput_tps": null,
-      "error_rate_pct": 0.0,
+      "error_rate_pct": 0.021795989537935156,
       "token_volume_24h": null
     },
     {
