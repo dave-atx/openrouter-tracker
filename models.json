@@ -1,5 +1,9 @@
 {
+<<<<<<< Updated upstream
   "fetched_at": "2026-09-01T07:09:45.355997+00:00",
+=======
+  "fetched_at": "2026-09-01T07:10:10.770401+00:00",
+>>>>>>> Stashed changes
   "count": 20,
   "models": [
     {
@@ -411,7 +415,11 @@
       "three_d_rank": 31,
       "avg_latency_ms": null,
       "avg_throughput_tps": null,
+<<<<<<< Updated upstream
       "error_rate_pct": 0.7801059742959779,
+=======
+      "error_rate_pct": 0.6992081624949691,
+>>>>>>> Stashed changes
       "token_volume_24h": null
     },
     {
@@ -960,7 +968,11 @@
       "three_d_rank": 57,
       "avg_latency_ms": null,
       "avg_throughput_tps": null,
+<<<<<<< Updated upstream
       "error_rate_pct": 0.009165902841431262,
+=======
+      "error_rate_pct": 0.009067827348559376,
+>>>>>>> Stashed changes
       "token_volume_24h": null
     },
     {
@@ -1143,7 +1155,11 @@
       "three_d_rank": null,
       "avg_latency_ms": null,
       "avg_throughput_tps": null,
+<<<<<<< Updated upstream
       "error_rate_pct": 1.1522521622299706,
+=======
+      "error_rate_pct": 2.093394425730267,
+>>>>>>> Stashed changes
       "token_volume_24h": null
     },
     {
