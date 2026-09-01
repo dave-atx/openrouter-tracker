@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-09-01T06:56:49.250453+00:00",
+  "fetched_at": "2026-09-01T07:09:45.355997+00:00",
   "count": 20,
   "models": [
     {
@@ -212,7 +212,7 @@
       "three_d_rank": 7,
       "avg_latency_ms": null,
       "avg_throughput_tps": null,
-      "error_rate_pct": 0.3783797088709804,
+      "error_rate_pct": 0.3868542384392697,
       "token_volume_24h": null
     },
     {
@@ -411,7 +411,7 @@
       "three_d_rank": 31,
       "avg_latency_ms": null,
       "avg_throughput_tps": null,
-      "error_rate_pct": 0.6540252795591783,
+      "error_rate_pct": 0.7801059742959779,
       "token_volume_24h": null
     },
     {
@@ -659,7 +659,7 @@
       "three_d_rank": 37,
       "avg_latency_ms": null,
       "avg_throughput_tps": null,
-      "error_rate_pct": 0.7737801011402752,
+      "error_rate_pct": 0.7311631081136483,
       "token_volume_24h": null
     },
     {
@@ -811,7 +811,7 @@
       "three_d_rank": 46,
       "avg_latency_ms": null,
       "avg_throughput_tps": null,
-      "error_rate_pct": 33.14711359404096,
+      "error_rate_pct": 33.33333333333333,
       "token_volume_24h": null
     },
     {
@@ -960,7 +960,7 @@
       "three_d_rank": 57,
       "avg_latency_ms": null,
       "avg_throughput_tps": null,
-      "error_rate_pct": 0.0,
+      "error_rate_pct": 0.009165902841431262,
       "token_volume_24h": null
     },
     {
@@ -1053,7 +1053,7 @@
       "three_d_rank": null,
       "avg_latency_ms": null,
       "avg_throughput_tps": null,
-      "error_rate_pct": 3.685578327486553,
+      "error_rate_pct": 3.4001283688754853,
       "token_volume_24h": null
     },
     {
@@ -1143,7 +1143,7 @@
       "three_d_rank": null,
       "avg_latency_ms": null,
       "avg_throughput_tps": null,
-      "error_rate_pct": 2.4987946686143374,
+      "error_rate_pct": 1.1522521622299706,
       "token_volume_24h": null
     },
     {
@@ -1237,7 +1237,7 @@
       "three_d_rank": null,
       "avg_latency_ms": null,
       "avg_throughput_tps": null,
-      "error_rate_pct": 0.3236245954692549,
+      "error_rate_pct": 0.0,
       "token_volume_24h": null
     },
     {
