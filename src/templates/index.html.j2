@@ -64,7 +64,7 @@
     }
 
     body {
-      font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      font-family: ui-sans-serif, sans-serif;
       background: var(--bg);
       color: var(--fg);
       line-height: 1.5;
@@ -171,11 +171,36 @@
     th.sorted-asc::after { content: " ▲"; }
     th.sorted-desc::after { content: " ▼"; }
 
-    td {
+    .td {
       padding: 0.875rem 1rem;
       border-bottom: 1px solid var(--border);
       font-size: 0.875rem;
       vertical-align: middle;
+    }
+
+    .perf-value {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      font-size: 0.8125rem;
+    }
+
+    .perf-value.na {
+      color: var(--muted);
+    }
+
+    .perf-value.latency {
+      color: var(--fg);
+    }
+
+    .perf-value.throughput {
+      color: var(--fg);
+    }
+
+    .perf-value.error-rate {
+      color: var(--red);
+    }
+
+    .perf-value.token-vol {
+      color: var(--fg);
     }
 
     tbody tr {
@@ -202,7 +227,6 @@
     .col-latency { width: 100px; }
     .col-error-rate { width: 110px; }
     .col-token-vol { width: 100px; }
-    .col-copy { width: 48px; }
 
     .rank {
       font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
@@ -240,6 +264,32 @@
       font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
       font-size: 0.7rem;
       color: var(--muted);
+      display: flex;
+      align-items: center;
+      gap: 0.375rem;
+    }
+
+    .model-name .id .copy-btn {
+      padding: 0.125rem;
+      border-radius: 4px;
+      color: var(--muted);
+      opacity: 0.6;
+      transition: all 0.15s ease;
+    }
+
+    .model-name .id .copy-btn:hover {
+      opacity: 1;
+      background: var(--code-bg);
+      color: var(--fg);
+    }
+
+    .model-name .id .copy-btn.copied {
+      color: var(--green);
+    }
+
+    .model-name .id .copy-btn svg {
+      width: 14px;
+      height: 14px;
     }
 
     .model-name .expired-badge {
@@ -380,33 +430,6 @@
       color: var(--muted);
       font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
       font-size: 0.8125rem;
-    }
-
-    .copy-btn {
-      background: none;
-      border: none;
-      cursor: pointer;
-      padding: 0.375rem;
-      border-radius: 6px;
-      color: var(--muted);
-      transition: all 0.15s ease;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .copy-btn:hover {
-      background: var(--code-bg);
-      color: var(--fg);
-    }
-
-    .copy-btn.copied {
-      color: var(--green);
-    }
-
-    .copy-btn svg {
-      width: 18px;
-      height: 18px;
     }
 
     tr.expired {
@@ -550,7 +573,6 @@
             <th class="col-latency" data-sort="latency">Latency</th>
             <th class="col-error-rate" data-sort="error-rate">Error Rate</th>
             <th class="col-token-vol" data-sort="token-vol">Token Vol</th>
-            <th class="col-copy" aria-label="Copy model ID"></th>
           </tr>
         </thead>
         <tbody>
@@ -564,10 +586,10 @@
               data-modalities="{{ model.modalities_badges | join(',') }}" 
               data-released="{{ model.release_date.timestamp() }}"
               data-3d="{{ model.three_d_elo or -1 }}"
-              data-throughput="-1"
-              data-latency="-1"
-              data-error-rate="-1"
-              data-token-vol="-1">
+              data-throughput="{{ model.avg_throughput_tps or -1 }}"
+              data-latency="{{ model.avg_latency_ms or -1 }}"
+              data-error-rate="{{ model.error_rate_pct or -1 }}"
+              data-token-vol="{{ model.token_volume_24h or -1 }}">
             <td class="rank">{{ model.rank }}</td>
             <td class="col-name">
               <div class="model-name">
@@ -577,7 +599,11 @@
                   <span class="expired-badge">Expired</span>
                   {% endif %}
                 </div>
-                <span class="id">{{ model.id }}</span>
+                <span class="id">{{ model.id }}
+                  <button class="copy-btn" data-model-id="{{ model.id }}" aria-label="Copy {{ model.id }}" title="Copy model ID">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+                  </button>
+                </span>
                 <details class="disclosure">
                   <summary>Description</summary>
                   <div class="description-content">{{ model.description }}</div>
@@ -623,21 +649,32 @@
               {% endif %}
             </td>
             <td class="col-throughput">
-              <span class="na-value">N/A</span>
+              {% if model.avg_throughput_tps is not none %}
+              <span class="perf-value throughput">{{ "%.1f"|format(model.avg_throughput_tps) }} t/s</span>
+              {% else %}
+              <span class="perf-value na">N/A</span>
+              {% endif %}
             </td>
             <td class="col-latency">
-              <span class="na-value">N/A</span>
+              {% if model.avg_latency_ms is not none %}
+              <span class="perf-value latency">{{ "%.0f"|format(model.avg_latency_ms) }} ms</span>
+              {% else %}
+              <span class="perf-value na">N/A</span>
+              {% endif %}
             </td>
             <td class="col-error-rate">
-              <span class="na-value">N/A</span>
+              {% if model.error_rate_pct is not none %}
+              <span class="perf-value error-rate">{{ "%.2f"|format(model.error_rate_pct) }}%</span>
+              {% else %}
+              <span class="perf-value na">N/A</span>
+              {% endif %}
             </td>
             <td class="col-token-vol">
-              <span class="na-value">N/A</span>
-            </td>
-            <td class="col-copy">
-              <button class="copy-btn" data-model-id="{{ model.id }}" aria-label="Copy {{ model.id }}" title="Copy model ID">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-              </button>
+              {% if model.token_volume_24h is not none %}
+              <span class="perf-value token-vol">{{ model.token_volume_24h | humanize_tokens }}</span>
+              {% else %}
+              <span class="perf-value na">N/A</span>
+              {% endif %}
             </td>
           </tr>
           {% endfor %}

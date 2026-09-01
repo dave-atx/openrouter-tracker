@@ -14,6 +14,50 @@ MODELS_JSON_PATH = Path(__file__).parent.parent / "models.json"
 DOCS_MODELS_JSON_PATH = Path(__file__).parent.parent / "docs" / "models.json"
 
 
+async def fetch_endpoints(client: httpx.AsyncClient, details_url: str) -> dict | None:
+    """Fetch endpoints data for a model."""
+    try:
+        resp = await client.get(f"https://openrouter.ai{details_url}")
+        resp.raise_for_status()
+        return resp.json()
+    except Exception as e:
+        print(f"Warning: Failed to fetch endpoints for {details_url}: {e}")
+        return None
+
+
+def compute_performance_metrics(endpoints_data: dict | None) -> tuple[float | None, float | None, float | None, int | None]:
+    """Compute aggregated performance metrics from endpoints."""
+    if not endpoints_data:
+        return None, None, None, None
+    
+    endpoints = endpoints_data.get("data", {}).get("endpoints", [])
+    if not endpoints:
+        return None, None, None, None
+    
+    latencies = []
+    throughputs = []
+    uptimes = []
+    
+    for ep in endpoints:
+        latency = ep.get("latency_last_30m")
+        throughput = ep.get("throughput_last_30m")
+        uptime = ep.get("uptime_last_30m")
+        
+        if latency is not None:
+            latencies.append(latency)
+        if throughput is not None:
+            throughputs.append(throughput)
+        if uptime is not None:
+            uptimes.append(uptime)
+    
+    avg_latency = sum(latencies) / len(latencies) if latencies else None
+    avg_throughput = sum(throughputs) / len(throughputs) if throughputs else None
+    error_rate = (100 - sum(uptimes) / len(uptimes)) if uptimes else None
+    # Token volume not directly available, using None for now
+    
+    return avg_latency, avg_throughput, error_rate, None
+
+
 async def fetch_free_models() -> list[FreeModel]:
     """Fetch all free models from OpenRouter, sorted by coding_index desc."""
     params = {
@@ -22,21 +66,31 @@ async def fetch_free_models() -> list[FreeModel]:
         "limit": 1000,
     }
     
+    models = []
     async with httpx.AsyncClient(timeout=30.0) as client:
         resp = await client.get(OPENROUTER_MODELS_URL, params=params)
         resp.raise_for_status()
         data = resp.json()
     
-    models = []
-    for m in data.get("data", []):
-        # Filter: only truly free (prompt=0 AND completion=0)
-        pricing = m.get("pricing", {})
-        if pricing.get("prompt") != "0" or pricing.get("completion") != "0":
-            continue
-        
-        # Create FreeModel with all data
-        model = FreeModel(**m)
-        models.append(model)
+        for m in data.get("data", []):
+            # Filter: only truly free (prompt=0 AND completion=0)
+            pricing = m.get("pricing", {})
+            if pricing.get("prompt") != "0" or pricing.get("completion") != "0":
+                continue
+            
+            # Create FreeModel with all data
+            model = FreeModel(**m)
+            
+            # Fetch endpoints for performance metrics
+            if model.links and model.links.details:
+                endpoints_data = await fetch_endpoints(client, model.links.details)
+                avg_latency, avg_throughput, error_rate, token_volume = compute_performance_metrics(endpoints_data)
+                model.avg_latency_ms = avg_latency
+                model.avg_throughput_tps = avg_throughput
+                model.error_rate_pct = error_rate
+                model.token_volume_24h = token_volume
+            
+            models.append(model)
     
     # Sort: coding_index desc (None last), then intelligence_index desc
     models.sort(key=lambda m: (

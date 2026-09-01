@@ -98,6 +98,11 @@ class FreeModel(BaseModel):
     three_d_elo: float | None = None
     three_d_win_rate: float | None = None
     three_d_rank: int | None = None
+    # Performance metrics from endpoints (aggregated)
+    avg_latency_ms: float | None = None
+    avg_throughput_tps: float | None = None
+    error_rate_pct: float | None = None
+    token_volume_24h: int | None = None
 
     def model_post_init(self, __context, /) -> None:
         """Compute derived fields after initialization."""
@@ -110,8 +115,8 @@ class FreeModel(BaseModel):
         self.is_expired = is_expired(self.expiration_date)
         self.modalities_badges = get_modality_badges(self.architecture.input_modalities)
         
-        # OpenRouter model page URL
-        self.openrouter_url = f"https://openrouter.ai/models/{self.canonical_slug}"
+        # OpenRouter model page URL - use model ID with :free suffix
+        self.openrouter_url = f"https://openrouter.ai/{self.id}"
         
         # 3D benchmark from Design Arena
         if self.benchmarks and self.benchmarks.design_arena:
