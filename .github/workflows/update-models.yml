@@ -54,10 +54,11 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          # Pull latest changes first to avoid conflicts
+          git pull --rebase
           git add models.json
           if ! git diff --staged --quiet; then
             git commit -m "Update models.json $(date +%F)"
-            git pull --rebase
             git push
           else
             echo "No changes to models.json"
