@@ -17,7 +17,7 @@ permissions:
   id-token: write
 
 concurrency:
-  group: pages
+  group: update-models
   cancel-in-progress: false
 
 jobs:
@@ -52,14 +52,25 @@ jobs:
 
       - name: Commit models.json (history)
         run: |
+          set -euo pipefail
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          # Stash any local changes, pull latest, then restore and commit
-          git stash
-          git pull --rebase
-          git stash pop || true
-          git add models.json
-          if ! git diff --staged --quiet; then
+
+          # models.json is fully regenerated each run, so any local changes
+          # are stale by definition. Discard them rather than trying to
+          # 3-way merge, which can produce conflicts if a prior run committed
+          # in between. (See issue #1.)
+          git checkout -- models.json
+
+          git pull --rebase --autostash
+          # Verify no conflict markers slipped in (defense in depth).
+          if grep -qE '^(<<<<<<<|=======|>>>>>>>) ' models.json; then
+            echo "ERROR: conflict markers detected in models.json after pull" >&2
+            exit 1
+          fi
+
+          if ! git diff --staged --quiet -- models.json; then
+            git add models.json
             git commit -m "Update models.json $(date +%F)"
             git push
           else
