@@ -34,10 +34,10 @@ def load_models() -> list[FreeModel]:
     """Load models from models.json."""
     if not MODELS_JSON_PATH.exists():
         return []
-    
+
     with open(MODELS_JSON_PATH) as f:
         data = json.load(f)
-    
+
     models = []
     for m in data.get("models", []):
         model = FreeModel(**m)
@@ -49,10 +49,10 @@ def get_last_updated() -> str:
     """Get the last updated timestamp."""
     if not MODELS_JSON_PATH.exists():
         return "Unknown"
-    
+
     with open(MODELS_JSON_PATH) as f:
         data = json.load(f)
-    
+
     fetched_at = data.get("fetched_at")
     if fetched_at:
         try:
@@ -67,18 +67,18 @@ def main() -> None:
     """Generate index.html from template."""
     models = load_models()
     last_updated = get_last_updated()
-    
+
     env = Environment(
         loader=FileSystemLoader(TEMPLATES_DIR),
         autoescape=select_autoescape(["html", "xml"]),
     )
-    
+
     # Add custom filters and globals
     env.filters["humanize_tokens"] = humanize_tokens
     env.filters["coding_index_color"] = coding_index_color
     env.filters["reasoning_summary"] = reasoning_summary
     env.globals["coding_index_color"] = coding_index_color
-    
+
     template = env.get_template("index.html.j2")
 
     html = template.render(

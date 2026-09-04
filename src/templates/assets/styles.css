@@ -345,7 +345,7 @@ tr.expired .model-name, .card.expired .model-name { text-decoration: line-throug
 .copy-btn.copied { color: var(--accent); opacity: 1; }
 .copy-btn svg { width: 13px; height: 13px; }
 
-.ctx, .rel {
+.ctx, .rel, .tok {
   font-family: var(--font-data);
   font-size: .82rem;
   font-variant-numeric: tabular-nums;

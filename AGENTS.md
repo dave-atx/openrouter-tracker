@@ -9,8 +9,14 @@ uv sync
 # Full rebuild (fetch → HTML → Atom)
 uv run python src/fetch_models.py && uv run python src/generate_html.py && uv run python src/generate_atom.py
 
-# Lint
+# Lint (mandatory before commit)
 uv run ruff check .
+
+# Format check (mandatory before commit)
+uv run ruff format --check .
+
+# Auto-format
+uv run ruff format .
 
 # Test
 uv run pytest
@@ -34,7 +40,8 @@ cd docs && python -m http.server 8000
 - **OpenRouter URL**: `https://openrouter.ai/{model.id}` (not canonical_slug)
 - **Change detection**: coding_index Δ≥5 OR context_length Δ≥10%
 - **Error rate**: computed from `uptime_last_30m` (100 - avg uptime)
-- **Throughput/Latency/Token Vol**: Always N/A (API returns null)
+- **Token volume (24h)**: Source is `https://openrouter.ai/api/frontend/v1/rankings/models` (public, no auth). Sum of `total_prompt_tokens + total_completion_tokens + total_native_tokens_reasoning` for the most recent date with data, restricted to `variant == "free"`. The rankings API publishes with ~1 day lag, so "today" is usually empty — we fall back to the most recent available date.
+- **Throughput/Latency**: Always N/A (endpoints API returns null)
 
 ## CI Gotchas
 

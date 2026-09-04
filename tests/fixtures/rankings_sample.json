@@ -1,0 +1,49 @@
+{
+  "data": [
+    {
+      "date": "2026-09-03 00:00:00",
+      "model_permaslug": "free-org/example-free-20260101",
+      "variant": "free",
+      "total_prompt_tokens": 1000,
+      "total_completion_tokens": 2000,
+      "total_native_tokens_reasoning": 500,
+      "count": 10
+    },
+    {
+      "date": "2026-09-03 00:00:00",
+      "model_permaslug": "free-org/example-free-20260101",
+      "variant": "standard",
+      "total_prompt_tokens": 999999,
+      "total_completion_tokens": 999999,
+      "total_native_tokens_reasoning": 0,
+      "count": 99
+    },
+    {
+      "date": "2026-09-03 00:00:00",
+      "model_permaslug": "free-org/another-free-20260202",
+      "variant": "free",
+      "total_prompt_tokens": 0,
+      "total_completion_tokens": 0,
+      "total_native_tokens_reasoning": 0,
+      "count": 0
+    },
+    {
+      "date": "2026-09-03 00:00:00",
+      "model_permaslug": "free-org/sum-fields-20260303",
+      "variant": "free",
+      "total_prompt_tokens": 10,
+      "total_completion_tokens": 20,
+      "total_native_tokens_reasoning": 5,
+      "count": 1
+    },
+    {
+      "date": "2026-09-02 00:00:00",
+      "model_permaslug": "free-org/yesterday-20260101",
+      "variant": "free",
+      "total_prompt_tokens": 7777,
+      "total_completion_tokens": 0,
+      "total_native_tokens_reasoning": 0,
+      "count": 1
+    }
+  ]
+}

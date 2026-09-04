@@ -32,6 +32,7 @@
       <div><dt>Intelligence</dt><dd>{% if model.intelligence_index is not none %}{{ "%.1f"|format(model.intelligence_index) }}{% else %}N/A{% endif %}</dd></div>
       <div><dt>3D Elo</dt><dd>{% if model.three_d_elo is not none %}{{ model.three_d_elo | int }} ({{ "%.1f"|format(model.three_d_win_rate) }}%{% if model.three_d_rank is not none %}, #{{ model.three_d_rank }}{% endif %}){% else %}N/A{% endif %}</dd></div>
       <div><dt>Error rate</dt><dd>{% if model.error_rate_pct is not none %}{{ "%.2f"|format(model.error_rate_pct) }}%{% else %}N/A{% endif %}</dd></div>
+      <div><dt>Tokens (24h)</dt><dd>{% if model.token_volume_24h is not none %}{{ model.token_volume_24h | humanize_tokens }}{% else %}N/A{% endif %}</dd></div>
       <div><dt>Reasoning</dt><dd>{{ model.reasoning | reasoning_summary }}</dd></div>
     </dl>
     <p class="model-description">{{ model.description }}</p>
@@ -48,6 +49,7 @@
     data-rank="{{ model.rank }}"
     data-coding="{{ model.coding_index if model.coding_index is not none else -1 }}"
     data-context="{{ model.context_length }}"
+    data-tokens="{{ model.token_volume_24h if model.token_volume_24h is not none else -1 }}"
     data-released="{{ model.release_date.timestamp() }}">
   <td class="rank-num">{{ model.rank }}</td>
   <td class="model-cell">
@@ -60,6 +62,7 @@
   </td>
   <td>{{ coding_badge(model) }}</td>
   <td class="ctx">{{ model.context_length | humanize_tokens }}</td>
+  <td class="tok">{% if model.token_volume_24h is not none %}{{ model.token_volume_24h | humanize_tokens }}{% else %}N/A{% endif %}</td>
   <td>{{ modality_badges(model) }}</td>
   <td class="rel"><time datetime="{{ model.release_date.isoformat() }}">{{ model.release_date.strftime('%Y-%m-%d') }}</time></td>
 </tr>
@@ -74,6 +77,7 @@
     data-rank="{{ model.rank }}"
     data-coding="{{ model.coding_index if model.coding_index is not none else -1 }}"
     data-context="{{ model.context_length }}"
+    data-tokens="{{ model.token_volume_24h if model.token_volume_24h is not none else -1 }}"
     data-released="{{ model.release_date.timestamp() }}">
   <div class="card-top">
     <span class="rank-num">{{ model.rank }}</span>
@@ -86,6 +90,7 @@
   <span class="model-id">{{ model.id }} {{ copy_button(model) }}</span>
   <div class="card-meta">
     <span>{{ model.context_length | humanize_tokens }} ctx</span>
+    {% if model.token_volume_24h is not none %}<span class="tok">{{ model.token_volume_24h | humanize_tokens }} tok/24h</span>{% endif %}
     <time datetime="{{ model.release_date.isoformat() }}">{{ model.release_date.strftime('%Y-%m-%d') }}</time>
   </div>
   {{ modality_badges(model) }}
@@ -130,6 +135,7 @@
             <option value="rank-asc">Rank</option>
             <option value="coding-desc">Coding, high&rarr;low</option>
             <option value="context-desc">Context, high&rarr;low</option>
+            <option value="tokens-desc">Tokens (24h), high&rarr;low</option>
             <option value="released-desc">Released, newest</option>
             <option value="name-asc">Name, A&rarr;Z</option>
           </select>
@@ -147,6 +153,7 @@
               <th data-sort="name" tabindex="0">Model</th>
               <th data-sort="coding" tabindex="0">Coding</th>
               <th data-sort="context" tabindex="0">Context</th>
+              <th data-sort="tokens" tabindex="0">Tokens (24h)</th>
               <th>Modalities</th>
               <th data-sort="released" tabindex="0">Released</th>
             </tr>

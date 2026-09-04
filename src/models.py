@@ -7,6 +7,7 @@ from pydantic import BaseModel, Field
 
 class ModelPricing(BaseModel):
     """Pricing information for a model."""
+
     prompt: str
     completion: str
     request: str = "0"
@@ -15,6 +16,7 @@ class ModelPricing(BaseModel):
 
 class ModelArchitecture(BaseModel):
     """Model architecture information."""
+
     modality: str
     input_modalities: list[str]
     output_modalities: list[str]
@@ -24,6 +26,7 @@ class ModelArchitecture(BaseModel):
 
 class AABenchmarkEntry(BaseModel):
     """Artificial Analysis benchmark entry."""
+
     agentic_index: float | None = None
     coding_index: float | None = None
     intelligence_index: float | None = None
@@ -31,6 +34,7 @@ class AABenchmarkEntry(BaseModel):
 
 class DABenchmarkEntry(BaseModel):
     """Design Arena benchmark entry."""
+
     arena: str
     category: str
     elo: float
@@ -40,12 +44,14 @@ class DABenchmarkEntry(BaseModel):
 
 class ModelBenchmarks(BaseModel):
     """Third-party benchmark rankings for a model."""
+
     artificial_analysis: AABenchmarkEntry | None = None
     design_arena: list[DABenchmarkEntry] = []
 
 
 class ModelReasoning(BaseModel):
     """Reasoning effort configuration."""
+
     mandatory: bool = False
     default_enabled: bool = False
     supported_efforts: list[str] = []
@@ -55,6 +61,7 @@ class ModelReasoning(BaseModel):
 
 class TopProviderInfo(BaseModel):
     """Information about the top provider for a model."""
+
     context_length: int | None = None
     is_moderated: bool
     max_completion_tokens: int | None = None
@@ -62,11 +69,13 @@ class TopProviderInfo(BaseModel):
 
 class ModelLinks(BaseModel):
     """Related API endpoints and resources for a model."""
+
     details: str
 
 
 class FreeModel(BaseModel):
     """Free model data from OpenRouter API."""
+
     id: str
     canonical_slug: str
     name: str
@@ -107,17 +116,17 @@ class FreeModel(BaseModel):
     def model_post_init(self, __context, /) -> None:
         """Compute derived fields after initialization."""
         self.release_date = parse_slug_date(self.canonical_slug)
-        
+
         if self.benchmarks and self.benchmarks.artificial_analysis:
             self.coding_index = self.benchmarks.artificial_analysis.coding_index
             self.intelligence_index = self.benchmarks.artificial_analysis.intelligence_index
-        
+
         self.is_expired = is_expired(self.expiration_date)
         self.modalities_badges = get_modality_badges(self.architecture.input_modalities)
-        
+
         # OpenRouter model page URL - use model ID with :free suffix
         self.openrouter_url = f"https://openrouter.ai/{self.id}"
-        
+
         # 3D benchmark from Design Arena
         if self.benchmarks and self.benchmarks.design_arena:
             for entry in self.benchmarks.design_arena:
@@ -145,7 +154,8 @@ def get_modality_badges(input_modalities: list[str]) -> list[str]:
 def parse_slug_date(canonical_slug: str) -> datetime:
     """Extract YYYYMMDD from slug like 'org/model-20260616'."""
     import re
-    match = re.search(r'-(\d{8})$', canonical_slug)
+
+    match = re.search(r"-(\d{8})$", canonical_slug)
     if match:
         try:
             return datetime.strptime(match.group(1), "%Y%m%d").replace(tzinfo=UTC)
@@ -167,10 +177,14 @@ def is_expired(expiration_date: str | None) -> bool:
 
 def humanize_tokens(n: int) -> str:
     """Convert token count to human-readable string."""
+    if n >= 1_000_000_000_000:
+        return f"{n / 1_000_000_000_000:.1f}T".rstrip("0").rstrip(".")
+    if n >= 1_000_000_000:
+        return f"{n / 1_000_000_000:.1f}B".rstrip("0").rstrip(".")
     if n >= 1_000_000:
-        return f"{n / 1_000_000:.1f}M".rstrip('0').rstrip('.')
+        return f"{n / 1_000_000:.1f}M".rstrip("0").rstrip(".")
     if n >= 1_000:
-        return f"{n / 1_000:.1f}K".rstrip('0').rstrip('.')
+        return f"{n / 1_000:.1f}K".rstrip("0").rstrip(".")
     return str(n)
 
 
